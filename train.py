@@ -314,7 +314,7 @@ if __name__ == '__main__':
                         choices=['linear', 'softmax', 'sigmoid'])
     parser.add_argument("--same-lr", '--same_lr', default=False, action="store_true",
                         help="Use same LR for all param groups")
-    parser.add_argument("--distributed", default=True, action="store_true", help="Use DDP if set")
+    parser.add_argument("--distributed", default=False, action="store_true", help="Use DDP if set")
     parser.add_argument("--root", default=".", type=str,
                         help="Root folder to save data in")
     parser.add_argument("--resume", default='', type=str, help="Resume from checkpoint")
@@ -322,7 +322,7 @@ if __name__ == '__main__':
     parser.add_argument("--notes", default='', type=str, help="Wandb notes")
     parser.add_argument("--tags", default='sweep', type=str, help="Wandb tags")
 
-    parser.add_argument("--workers", default=11, type=int, help="Number of workers for data loading")
+    parser.add_argument("--workers", default=1, type=int, help="Number of workers for data loading")
     parser.add_argument("--dataset", default='nyu', type=str, help="Dataset to train on")
 
     parser.add_argument("--data_path", default='../dataset/nyu/sync/', type=str,

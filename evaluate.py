@@ -95,9 +95,10 @@ def eval(model, test_loader, args, gpus=None, ):
                     impath = f"{batch['image_path'][0].replace('/', '__').replace('.jpg', '')}"
                     factor = 1000
                 else:
-                    dpath = batch['image_path'][0].split('/')
-                    impath = dpath[1] + "_" + dpath[-1]
-                    impath = impath.split('.')[0]
+#                     dpath = batch['image_path'][0].split('/')
+#                     impath = dpath[1] + "_" + dpath[-1]
+#                     impath = impath.split('.')[0]
+                    impath = f"{batch['image_path'][0].replace('/', '__').replace('.jpg', '')}"
                     factor = 256
 
                 # rgb_path = os.path.join(rgb_dir, f"{impath}.png")
